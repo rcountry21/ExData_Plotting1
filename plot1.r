@@ -14,9 +14,11 @@ plotData <- data[data$Date == '1/2/2007' | data$Date == '2/2/2007',]
 # Subset data into vector for histogram
 x <- as.numeric(as.character((plotData[plotData["Global_active_power"] != '?', "Global_active_power"])))
 
+png("plot1.png");
 # Show histogram as assigned
 hist(x, 
      freq=TRUE, 
      xlab="Global Active Power (killowatts)", 
      main="Global Active Power", 
      col="red")
+dev.off()
